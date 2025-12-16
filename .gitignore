@@ -209,4 +209,4 @@ __marimo__/
 .logs/*
 input/*
 output/*
-intermediate/*
+intermediate/*.parquet
