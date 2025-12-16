@@ -1,10 +1,5 @@
 # Neurovasc on MEDS
-
-Transforming MEDS Clinical Data into RDF Graphs for Semantic Analysis.
-
-## Overview
-
-`neurovasc_on_meds` is a Python-based workflow for converting clinical datasets into RDF graphs using the **MEDS (Medical Event Data Standard)** framework. This repository accompanies the **MEDS2RDF** methodology described in the paper *“MEDS2RDF: From Minimal Events to Meaningful Graphs”* by Marfoglia et al.
+`neurovasc_on_meds` is a Python-based workflow for converting clinical datasets into RDF graphs using the **MEDS (Medical Event Data Standard)** framework. This repository accompanies the **MEDS2RDF** library described [here](https://github.com/TeamHeKA/meds2rdf).
 
 The workflow enables:
 
@@ -150,6 +145,7 @@ This ensures the RDF graph conforms to **MEDS-OWL constraints**.
 
 * [MEDS2RDF Python Library](https://github.com/TeamHeKA/meds2rdf)
 * [MEDS-OWL Ontology](https://github.com/TeamHeKA/meds-ontology)
+* [Jhee, J.H. et al. (2025). "Predicting Clinical Outcomes from Patient Care Pathways Represented with  Temporal Knowledge Graphs"](https://doi.org/10.1007/978-3-031-94575-5_16).
 
 ## License
 
