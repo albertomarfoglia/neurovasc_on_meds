@@ -59,6 +59,12 @@ patients:
       - col(ica_therapy)
     time: null
 
+  ttt:
+    code:
+      - TTT
+      - col(ttt)
+    time: null
+
 # binary flags (emit only when positive/present)
 # Note: preproc should map -1 -> null, 0 -> ABSENT or omitted, 1 -> PRESENT
   fever:

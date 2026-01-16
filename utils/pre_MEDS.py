@@ -82,16 +82,16 @@ def generate_meds_preprocessed(
     df = df.copy()
 
     df['subject_id'] = df.index
-
-    df["age"] = round(df["age"])
-    df["hospital_stay_length"] = round(df["hospital_stay_length"])
-    df["gcs"] = round(df["gcs"], 2)
-    df["nb_acte"] = round(df["nb_acte"])
+    df["hospital_stay_length"] = df["hospital_stay_length"].round()
+    df["nb_acte"] = df["nb_acte"].round()
+    df["age"] = df["age"].round()
+    df["gcs"] = df["gcs"].round(2)
 
     events = EventsTable(df)
     df_admin = events.to_administrations()
     df_proc = events.to_procedures()
     df_pat = df.drop(columns=events.names)
+    
 
     if output_path:
         df_pat.to_parquet(f"{output_path}/patients.parquet", index=False)

@@ -112,9 +112,9 @@ def generate_synthetic_dataset(
 
     # Generate variables based on the statistics
     df = pd.DataFrame({
-        'hospital_stay_length': map(round, genextreme.rvs(-0.4091639605356321, 13.2154345852118, 13.507892218123956, n_patients)),
-        'gcs': map(round, norm.rvs(14.866037735849057, 1.079385463913648, n_patients)),
-        'nb_acte': map(round, exponweib.rvs(1.7487636231551846, 0.7992842590334144, 0.9388125774311487, 22.6608165193314, n_patients)),
+        'hospital_stay_length': genextreme.rvs(-0.4091639605356321, 13.2154345852118, 13.507892218123956, n_patients),
+        'gcs': np.round(norm.rvs(14.866037735849057, 1.079385463913648, n_patients), 2),
+        'nb_acte': exponweib.rvs(1.7487636231551846, 0.7992842590334144, 0.9388125774311487, 22.6608165193314, n_patients),
         
         'gender': np.random.choice(['F', 'M'], size=n_patients, p=[0.615094, 0.384906]),
         'entry': np.random.choice(['7', '6', '3', '13', '2', '8', '0', '1', '5'], size=n_patients, p=[0.289412, 0.254118, 0.157647, 0.145882, 0.103529, 0.023529, 0.018824, 0.004706, 0.002353]),    
@@ -135,7 +135,7 @@ def generate_synthetic_dataset(
         'instable': np.random.choice(['0', '1'], size=n_patients, p=[0.917625, 0.082375]),
         'vasospasme': np.random.choice(['1', '0'], size=n_patients, p=[0.984906, 0.015094]),
         'ivh': np.random.choice(['0', '1'], size=n_patients, p=[0.932075, 0.067925]),
-        'age': map(round, genextreme.rvs(0.27689720964297965, 51.599845037531225, 14.34488206435922, n_patients)),
+        'age': genextreme.rvs(0.27689720964297965, 51.599845037531225, 14.34488206435922, n_patients),
         'outcome': np.random.choice(OUTCOME_COLUMNS, size=n_patients, p=OUTCOME_PROBS)
         })
     df[CATEGORICAL_COLUMNS] = df[CATEGORICAL_COLUMNS].apply(lambda x : pd.factorize(x)[0])
