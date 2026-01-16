@@ -98,4 +98,4 @@ def generate_meds_preprocessed(
         df_admin.to_parquet(f"{output_path}/administrations.parquet", index=False)
         df_proc.to_parquet(f"{output_path}/procedures.parquet", index=False)
 
-    return (df, df_admin, df_proc)
+    return (df_pat, df_admin, df_proc)

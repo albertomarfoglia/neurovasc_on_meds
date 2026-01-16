@@ -40,21 +40,8 @@ def build_meds_dt(records):
 
     return df.sort_index()
 
-# def run_query(graph: Graph, query_name: str, query: str) -> pd.DataFrame:
-
-#     results = graph.query(query)
-#     vars_ = [str(v) for v in results.vars]
-
-#     rows = []
-#     for row in results:
-#         rows.append({
-#             v: (row[v] if row[v] is not None else None)
-#             for v in vars_
-#         })
-
 def build_medskg_dt(graph: Graph):
     rows = run_query(graph, "all features", PATIENT_FEATURE_MATRIX)
-    #df = pd.DataFrame(rows, columns=vars_)
     df = pd.DataFrame(rows)
     df["sub_id"] = df["sub_id"].astype(int)
     return df.set_index("sub_id").sort_index()

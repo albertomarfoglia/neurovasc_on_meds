@@ -6,28 +6,28 @@ patients:
       - HOSPITAL_STAY_LENGTH
       - Days
     time: null
-    numeric_value: col(hospital_stay_length)
+    numeric_value: hospital_stay_length
 
   gcs:
     code: 
       - GCS_SCORE
       - Gcs
     time: null
-    numeric_value: col(gcs)
+    numeric_value: gcs
 
   nb_acte:
     code: 
      - ACT_NUMBER
      - "Received medical treatments"
     time: null
-    numeric_value: col(nb_acte)
+    numeric_value: nb_acte
 
   age:
     code:
       - AGE
       - Years
     time: null
-    numeric_value: col(age)
+    numeric_value: age
 
   gender:
     code:
@@ -143,7 +143,7 @@ patients:
     code:
       - outcome
     time: null
-    numeric_value: col(outcome)
+    numeric_value: outcome
 
 administrations:
 # temporal events — each event maps to an absolute timestamp column created in preproc
